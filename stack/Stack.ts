@@ -2,8 +2,8 @@
  * @export
  * @class Stack
  */
-export class Stack {
-  data: any[];
+export class Stack<T> {
+  data: T[];
 
   /**
    * 스택 인스턴스 생성
@@ -17,7 +17,7 @@ export class Stack {
    * 스택에 새로운 요소 추가
    * @param  {any} value
    */
-  push(value: any) {
+  push(value: T) {
     this.data.push(value);
   }
 
@@ -45,12 +45,12 @@ export class Stack {
    * 스택의 마지막 요소를 반환한다.
    * @returns any
    */
-  pop(): any {
+  pop() {
     if (this.isEmpty()) {
       return null;
     }
 
-    return this.data.pop();
+    return this.data.pop() as T;
   }
 
   /**
@@ -67,7 +67,7 @@ export class Stack {
    * 스택을 배열로 변환해서 반환한다.
    * @returns any
    */
-  toArray(): any[] {
+  toArray(): T[] {
     return [...this.data].reverse();
   }
 }

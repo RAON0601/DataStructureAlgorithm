@@ -8,7 +8,7 @@ describe('Stack', () => {
   });
 
   it('should stack data to stack', () => {
-    const stack = new Stack();
+    const stack = new Stack<number>();
 
     stack.push(1);
     stack.push(2);
@@ -17,7 +17,7 @@ describe('Stack', () => {
   });
 
   it('should peek data from stack', () => {
-    const stack = new Stack();
+    const stack = new Stack<number>();
 
     expect(stack.peek()).toBeNull();
 
@@ -29,7 +29,7 @@ describe('Stack', () => {
   });
 
   it('should check if stack is empty', () => {
-    const stack = new Stack();
+    const stack = new Stack<number>();
 
     expect(stack.isEmpty()).toBe(true);
 
@@ -39,7 +39,7 @@ describe('Stack', () => {
   });
 
   it('should pop data from stack', () => {
-    const stack = new Stack();
+    const stack = new Stack<number>();
 
     stack.push(1);
     stack.push(2);
@@ -51,7 +51,7 @@ describe('Stack', () => {
   });
 
   it('should be possible to push/pop objects', () => {
-    const stack = new Stack();
+    const stack = new Stack<{ value: string; key: string }>();
 
     stack.push({ value: 'test1', key: 'key1' });
     stack.push({ value: 'test2', key: 'key2' });
@@ -64,7 +64,7 @@ describe('Stack', () => {
   });
 
   it('should be possible to convert stack to array', () => {
-    const stack = new Stack();
+    const stack = new Stack<number>();
 
     expect(stack.peek()).toBeNull();
 
